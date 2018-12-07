@@ -27,6 +27,12 @@ gulp.task('pug', function(){
     .pipe(gulp.dest(config.deploy))
 });
 
+gulp.task('images', function(){
+    gulp.src([config.origin + 'img/**/*'])
+    .pipe(gulp.dest(config.deploy + '/img'))
+    .pipe(reload({stream:true}));
+});
+
 //---------------------//
 //insert new tasks here//
 //---------------------//
