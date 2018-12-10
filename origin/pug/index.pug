@@ -3,7 +3,10 @@ html
   head
     meta(charset='UTF-8')
     link(rel='stylesheet' href='./css/core.css')
+    link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400,700')
     title Liz Earle UI Pattern Library
   body
-    h1 Heading
-    p The quick brown fox jumps over the lazy hamster
+    include ./includes/header.pug
+    section.page
+      include ./includes/page-body.pug
+    include ./includes/footer.pug

@@ -1,0 +1,33 @@
+.page{
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 0 $spacing 0;
+
+  .main-nav{
+    padding: 0;
+    margin: 0;
+
+    & li{
+      list-style-type: none;
+      display: block;
+      margin: $spacing 0 0 0;
+    }
+
+    .main-nav--link{
+      padding: $spacing 0;
+      text-align: center;
+      color: $dark-grey;
+      background: $light-grey;
+      border-bottom: $spacing-4 solid $mid-grey;
+      transition: all 0.5s ease;
+      text-decoration: none;
+      display: block;
+      font-size: $epsilon;
+
+      &:hover{
+        background: $light-blue;
+        border-bottom: $spacing-4 solid $le-blue;
+      }
+    }
+  }
+}

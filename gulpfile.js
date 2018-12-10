@@ -4,6 +4,7 @@ var gulp = require('gulp'),
     reload = browserSync.reload,
     pug = require('gulp-pug'),
     sass = require('gulp-sass'),
+    watch = require('gulp-watch'),
     defaultBrowser = 'google chrome';
 
 // config variables
@@ -32,8 +33,8 @@ gulp.task('pug', function(){
 
 // copy images origin --> public
 gulp.task('images', function(done){
-    gulp.src([config.origin + 'img/**/*'])
-    .pipe(gulp.dest(config.deploy + '/img'))
+    gulp.src([config.origin + 'img/*'])
+    .pipe(gulp.dest(config.deploy + '/img/'))
     .pipe(reload({stream:true}));
     done();
 });
@@ -70,6 +71,9 @@ gulp.task('browser-sync', function() {
         },
         browser: defaultBrowser
     });
+    gulp.watch(config.origin + '/sass/**/*.scss', gulp.series('sass'));
+    gulp.watch(config.origin + '/pug/**/*.pug', gulp.series('pug'));
+    gulp.watch("*.html").on("change", reload);
 });
 
 //---------------------//
